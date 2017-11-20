@@ -36,17 +36,32 @@ html {
 }
 body {
 	font-family: 'Open Sans', sans-serif;
+}
+
+form a, body, nav a {
 	color: white;
+}
+
+form a, nav a{
+	text-decoration: none;
+}
+
+form div, input, textarea, nav a {
+	padding: 10px;
+}
+
+nav li, form a, dt, dd{
+	display: inline-block;
 }
 /*--------------------------------------------------------------
 1.1 - BODY
 -------------------------------------------------------------- */
-.lead {
+#lead{
 	font-weight: 500;
 	font-size: 1.2rem;
 }
 
-.lead span {
+#lead span {
 	color:#77cae6;
 	font-weight: 800;
 }
@@ -58,7 +73,6 @@ h1 {
     font-size: 5.5rem;
     background-color: rgba(255,255,255,.5);
     line-height: 5rem;
-    text-align: center;
     padding: 20px;
 }
 
@@ -81,26 +95,23 @@ h4 {
 form {
 	padding-left:20px;
 }
-form div {
-	padding: 10px;
-}
+
 form .col-1 {
 	padding-right: 2rem !important;
 }
 label {
-	display:none;
+	display: none;
 }
 input, textarea {
 	background-color: #19896e;
 	width: 100%;
-	padding: 10px;
 	border:1px solid #19896e;
 }
 input:focus, textarea:focus {
 	outline:none;
 	border:1px solid #115e4b;
 }
-::-webkit-input-placeholder {
+::-webkit-input-placeholder { /*Do these need to be combined?*/
    color: white;
 }
 
@@ -119,11 +130,6 @@ form a {
 	margin-top: 20px;
 	padding:10px 20px;
 	background-color: #146c57;
-	text-transform: uppercase;
-	color: white;
-	text-decoration: none;
-	display:inline-block;
-	font-weight: 600;
 }
 
 form a:hover {
@@ -134,16 +140,19 @@ form a:hover {
 /*--------------------------------------------------------------
 1.5 - LISTS
 -------------------------------------------------------------- */
-dt, dd {
-	display: inline-block
-}
 dt {
 	font-weight:100;
-	width: 20px;
+	width: 60px;
 }
-dd {
+dd, form a {
 	font-weight: 600;
 }
+
+dd{
+	margin-left: 0;	
+	width: 145px;
+}
+
 /*--------------------------------------------------------------
 2.0 - MAIN MENU
 -------------------------------------------------------------- */
@@ -153,23 +162,14 @@ nav {
 }
 
 nav li  {
-	display:inline-block;
 	list-style: none;
 	padding: 0 20px;
     font-weight: 700;
 }
 
-nav a {
-	color: white;
-	text-decoration: none;
-	padding:10px;
-}
-
 nav a:hover {
 	background-color: rgba(255,255,255,.5);
 }
-
-
 
 /*--------------------------------------------------------------
 3.0 - SITE STRUCTURE
@@ -383,10 +383,10 @@ figure {
 /*--------------------------------------------------------------
 5.2 - TXT UTILITY
 -------------------------------------------------------------- */
-.txt-uppercase {
-	text-transform:uppercase;
+.txt-uppercase, form a  {
+	text-transform: uppercase;
 }
-.txt-center {
+.txt-center, h1 {
 	text-align: center;
 }
 /*--------------------------------------------------------------
@@ -395,7 +395,7 @@ figure {
 .p-t-sm {
 	padding-top: 10px;
 }
-.p-t-md {
+#hero {
 	padding-top: 20px;
 }
 .p-t-lg {
@@ -404,14 +404,11 @@ figure {
 .p-b-lg {
 	padding-bottom: 50px;
 }
-.p-b-xl {
+#services {
 	padding-bottom: 100px;
 }
-.m-t-0 {
-	margin-top: 0;
-}
-.m-b-lg {
-	margin-bottom: 50px;
+footer h4 + p {
+	margin: 0 0 50px
 }
 /*--------------------------------------------------------------
 5.4 - ALIGNMENTS
@@ -433,5 +430,37 @@ figure {
 
 @media screen and (max-width: 768px) {
 	
+	.wrapper{
+		width: 90%;
+	}
+	
+	figure.col-1-6, #map{
+		width: 50%;
+	}
+	
+	#services section.col-1-4{
+		margin: 20px 0;
+		padding: 0;
+	}
+	
+	nav.col-3-5, figure.col-1-6{
+		margin: 0 auto;		
+	}
+	
+	#fn{
+		float: none;
+	}
+	
+	nav.col-3-5{
+		text-align: center;
+	}
+	
+	nav.col-3-5 ul, nav.col-3-5 ul li{
+		padding: 0;
+	}
+	
+	#services section.col-1-4, #hero div.row div.col-1-2, nav.col-3-5, footer div div:last-child, footer section.col-1-2{
+		width: 100%;
+	}
 	
 }
